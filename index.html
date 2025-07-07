@@ -1,99 +1,350 @@
+
 <!DOCTYPE html>
-<html>
+
 <head>
+  <title>Alexander Aronowitz - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <title>Portfolio</title>
-  
-</head>
-<body style="background-color: rgb(235, 229, 221);">
-  <!-- Navigation -->
-  <nav>
-    <a href="#about">About</a> |
-    <a href="#skills">Skills</a> |
-    <a href="#projects">Projects</a> |
-    <a href="#contact">Contact</a>
-  </nav>
-<hr>
-  <!-- About Me -->
-  <section id="about">
-    <h2 style ="color: rgb(50, 45, 118);font-family:verdana">About Me</h2>
-    <p>Hello! My name is Malak Ali . I am a passionate flutter student learning HTML5, CSS3, Dart and flutter.</p>
-    <blockquote>
-      "Learning never exhausts the mind." – Leonardo da Vinci
-    </blockquote>
-  
-  </section>
-  <hr> 
-  <hr>
-  <hr>
-  <!-- My Skills -->
-  <section id="skills">
-    <h2 style ="color: rgb(50, 45, 118);font-family:verdana">Technical  Skills</h2>
-    <ul >
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+            background: #b8bcc1;
+        }
+
+        .container {
+            max-width: 800px; 
+            margin: 0 auto; 
+             padding: 0;
+          
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 0;
+           background-color: #b1abc6;
+            margin-bottom: 30px;
+            box-shadow: none;
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            border-radius: 10px;
+            
+        }
+
+        /* Navigation */
+        nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 50px;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-radius: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* gap: 40px; */
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background: rgba(177, 157, 170, 0.1);
+        }
+
       
-      <li >HTML5 - Intermediate</li>
-      <li>CSS3 - Intermediate</li>
-      <li>JavaScript - Intermediate</li>
-       <li>Dart - Beginner</li>
-      <li>Problem Solving</li>
-      <li>Teamwork</li>
-    </ul>
-    <hr>
-  </section>
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: white;
+            font-weight: 900;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
 
-  <!-- Projects -->
-  <section id="projects">
-    <h2 style ="color: rgb(50, 45, 118);font-family:verdana">Projects</h2>
-    
-    <h3>1.<p>&#128212;</p> My First Website</h3>
-    <p>This was my very first website using only HTML. It includes images, lists, and paragraphs.</p>
-    <a href="#">View Project</a>
+        .hello-text {
+            color: #4e587b;
+            font-size: 24px;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
 
-    <h3>2. Book Review Page</h3>
-    <p>A simple page where I wrote book reviews and added links to buy the books online.</p>
-    
-    <img src="book.jpeg" alt="Project Image" width="140">
-    <!-- <br> -->
-   <video width="220" height="200" controls>
-  <source src="Download.mp4" >
+        .title {
+            background: #00d4ff;
+            color: #000;
+            padding: 8px 16px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            display: inline-block;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+
+        .contact-info {
+            display: none;
+        }
+
+        /* Sections */
+        section {
+            background: white;
+            margin: 30px 20px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #2c3e50;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .about-text {
+            font-size: 16px;
+            color: #555;
+            text-align: justify;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            border-left: 4px solid #3498db;
+        }
+
+        .skill-name {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .skill-level {
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        /* Projects */
+        .project-item {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            border-left: 4px solid #e74c3c;
+        }
+
+        .project-title {
+            font-size: 1.2em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .project-description {
+            color: #555;
+            font-size: 14px;
+        }
+
+        /* Contact Form */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #74228d;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #364e5e;
+        }
+
+        .submit-btn {
+            background: #2d5b79;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #2980b9;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+       
+            .container {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <!-- Navigation -->
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                   
+                </ul>
+            </nav>
+
+            <div class="hello-text">Hello to</div>
+            <h1>Malak's Portfolio</h1>
+        </header>
+
+        <!-- About -->
+        <section>
+            <h2>About Me</h2>
+            <div class="about-text">
+                <p>Hello! I'm Malak Ali, a passionate content creator with expertise in digital storytelling and creative design. I help brands and individuals tell their stories through compelling visual content that resonates with audiences and drives meaningful connections.</p>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section>
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <div class="skill-name">Video Production</div>
+                    <div class="skill-level">Advanced</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Graphic Design</div>
+                    <div class="skill-level">Advanced</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Social Media</div>
+                    <div class="skill-level">Intermediate</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Adobe Creative Suite</div>
+                    <div class="skill-level">Advanced</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section>
+            <h2>Featured Projects</h2>
+            <div class="project-item">
+                <div class="project-title">📱 Brand Campaign Series</div>
+                <div class="project-description">
+                    A comprehensive digital campaign that increased engagement by 300% through strategic video content and social media planning.
+                </div>
+            </div>
+            <div class="project-item">
+                <div class="project-title">🎬 Documentary Production</div>
+                <div class="project-description">
+                    Produced and directed a short documentary that was featured in multiple film festivals and won awards for cinematography.
+                </div>
+            </div>
+            <div class="project-item">
+                <div class="project-title">✨ Creative Design Portfolio</div>
+                <div class="project-description">
+                    A collection of branding and design work showcasing versatility in visual communication and brand identity development.
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section>
+            <h2>Contact Me</h2>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject:</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Malak Ali. All rights reserved.</p>
+    </footer>
+
   
-Your browser does not support the video tag.
-</video>
-    <hr>
-  </section>
- <!-- Contact Section -->
-  <section id="contact">
-    <h2 style ="color: rgb(50, 45, 118);font-family:verdana">Contact Me</h2>
-
-    <form  >
-      <label for="name">Name:</label><br>
-      <input  style="background-color: rgb(154, 154, 183);" type="text" id="name" name="name"><br><br>
-
-      <label for="email">Email:</label><br>
-      <input style="background-color: rgb(154, 154, 183);" type="email" id="email" name="email"><br><br>
-
-      <label for="subject">Meeting Date:</label><br>
-      <input style="background-color: rgb(154, 154, 183);" type="month" id="subject" name="subject"><br><br>
-
-      <label for="message">Message:</label><br>
-      <textarea style="background-color: rgb(154, 154, 183);" id="message" name="message" rows="4" cols="30"></textarea><br><br>
-
-      <input style="background-color: rgb(86, 86, 146);" type="submit" value="Send Message">
-    </form>
-    </section>
-
-  <hr>
-
-  <!-- Footer -->
-  <footer>
-    <p>© Copy 2025 malak ali. All rights reserved.</p>
-    <p>Connect with us:
-      <a href="#GitHub">GitHub</a>  |  
-      <a href="#LinkedIn">LinkedIn</a> </p>
-    <p>Email:mah123@gmail.com</p>
-  </footer>
-
-  
-
 </body>
 </html>
